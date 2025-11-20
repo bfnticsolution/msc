@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique de Confidentialité - Mon Stock</title>
+    <style>
+        :root {
+            --primary-red: #EF2D2D;
+            --dark-red: #CC0000;
+            --light-red: #FF6B6B;
+            --gold: #F0C800;
+            --text-dark: #f5f8fc;
+            --text-light: #4A5568;
+            --bg-transparent: rgba(255, 255, 255, 0.05);
+            --border-light: rgba(239, 45, 45, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, 
+                rgba(239, 45, 45, 0.02) 0%, 
+                rgba(240, 200, 0, 0.02) 50%, 
+                rgba(239, 45, 45, 0.02) 100%);
+            min-height: 100vh;
+            backdrop-filter: blur(10px);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Épuré */
+        .header {
+            text-align: center;
+            padding: 3rem 0 2rem 0;
+            margin-bottom: 1rem;
+        }
+
+        .app-name {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .app-description {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        /* Contenu Principal Ultra Épuré */
+        .privacy-content {
+            background: var(--bg-transparent);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(239, 45, 45, 0.05);
+        }
+
+        .last-updated {
+            background: rgba(239, 45, 45, 0.08);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2.5rem;
+            border-left: 4px solid var(--primary-red);
+            font-size: 0.95rem;
+        }
+
+        .last-updated strong {
+            color: var(--primary-red);
+        }
+
+        /* Sections Minimalistes */
+        .section {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .section-title {
+            color: var(--primary-red);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title::before {
+            content: "•";
+            color: var(--gold);
+            font-size: 2rem;
+        }
+
+        .subsection {
+            margin-bottom: 1.5rem;
+        }
+
+        .subsection-title {
+            color: var(--dark-red);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* Listes Épurées */
+        .data-list {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .data-list li {
+            padding: 0.6rem 0;
+            padding-left: 1.2rem;
+            position: relative;
+            color: var(--text-light);
+            border-bottom: 1px solid rgba(239, 45, 45, 0.05);
+        }
+
+        .data-list li:before {
+            content: "→";
+            color: var(--primary-red);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .data-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Grille Simple */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin: 1.2rem 0;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.2rem;
+            border-radius: 10px;
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            background: rgba(239, 45, 45, 0.05);
+            transform: translateY(-2px);
+        }
+
+        /* Section Contact Épurée */
+        .contact-section {
+            background: linear-gradient(135deg, 
+                rgba(239, 45, 45, 0.08), 
+                rgba(240, 200, 0, 0.08));
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 2rem;
+            border: 1px solid var(--border-light);
+        }
+
+        .contact-email {
+            display: inline-block;
+            background: var(--primary-red);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            border: 1px solid var(--primary-red);
+        }
+
+        .contact-email:hover {
+            background: transparent;
+            color: var(--primary-red);
+            transform: translateY(-2px);
+        }
+
+        /* Footer Minimaliste */
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header {
+                padding: 2rem 0 1rem 0;
+            }
+
+            .app-name {
+                font-size: 2.2rem;
+            }
+
+            .privacy-content {
+                padding: 1.5rem;
+                margin: 0 -10px;
+                border-radius: 12px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .app-name {
+                font-size: 1.8rem;
+            }
+
+            .privacy-content {
+                padding: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Animations Subtiles */
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Délais d'animation */
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+        .section:nth-child(5) { animation-delay: 0.5s; }
+        .section:nth-child(6) { animation-delay: 0.6s; }
+        .section:nth-child(7) { animation-delay: 0.7s; }
+        .section:nth-child(8) { animation-delay: 0.8s; }
+        .section:nth-child(9) { animation-delay: 0.9s; }
+        .section:nth-child(10) { animation-delay: 1.0s; }
+
+        /* Effets de survol subtils */
+        .feature-card, .data-list li {
+            transition: all 0.3s ease;
+        }
+
+        /* Style pour les liens */
+        a {
+            color: var(--primary-red);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--dark-red);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="app-name">Mon Stock</h1>
+            <p class="app-description">Application de gestion de stock</p>
+        </header>
+
+        <main class="privacy-content">
+            <div class="last-updated">
+                <strong>Dernière mise à jour :</strong> <span id="current-date"></span>
+            </div>
+
+            <section class="section">
+                <h2 class="section-title">Informations Générales</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <strong>Application :</strong><br>
+                        Mon Stock
+                    </div>
+                    <div class="feature-card">
+                        <strong>Description :</strong><br>
+                        Application de gestion de stock
+                    </div>
+                    <div class="feature-card">
+                        <strong>Contact :</strong><br>
+                        numeriqueentreprisebf@gmail.com
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Données Collectées</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">📊 Données de connexion</h3>
+                    <ul class="data-list">
+                        <li>Adresse email</li>
+                        <li>Mot de passe (hashé et sécurisé)</li>
+                        <li>Informations de profil utilisateur</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">📦 Données métier</h3>
+                    <ul class="data-list">
+                        <li>Informations sur les stocks</li>
+                        <li>Historique des transactions</li>
+                        <li>Données statistiques</li>
+                        <li>Images des produits</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Finalités de la Collecte</h2>
+                <ul class="data-list">
+                    <li>Fournir les fonctionnalités de gestion de stock</li>
+                    <li>Authentifier les utilisateurs de manière sécurisée</li>
+                    <li>Stocker et synchroniser les données métier</li>
+                    <li>Envoyer des notifications importantes</li>
+                    <li>Améliorer l'application via l'analyse d'usage</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Services Tiers Utilisés</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Google Firebase</h3>
+                    <p>Nous utilisons les services Firebase de Google :</p>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <strong>Authentication</strong><br>
+                            Gestion sécurisée des connexions
+                        </div>
+                        <div class="feature-card">
+                            <strong>Cloud Firestore</strong><br>
+                            Base de données cloud
+                        </div>
+                        <div class="feature-card">
+                            <strong>Firebase Storage</strong><br>
+                            Stockage des images
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Sécurité des Données</h2>
+                <ul class="data-list">
+                    <li>Authentification sécurisée Firebase</li>
+                    <li>Données chiffrées en transit (HTTPS/TLS)</li>
+                    <li>Accès restreint aux bases de données</li>
+                    <li>Sauvegardes régulières et sécurisées</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Vos Droits (RGPD)</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <strong>D'accès</strong><br>
+                        Accéder à vos données
+                    </div>
+                    <div class="feature-card">
+                        <strong>De rectification</strong><br>
+                        Rectifier vos données
+                    </div>
+                    <div class="feature-card">
+                        <strong>De suppression</strong><br>
+                        Supprimer vos données
+                    </div>
+                </div>
+            </section>
+
+            <div class="contact-section">
+                <h2 class="section-title" style="color: var(--primary-red);">Contact</h2>
+                <p>Pour toute question concernant cette politique de confidentialité :</p>
+                <a href="mailto:numeriqueentreprisebf@gmail.com" class="contact-email">
+                    Ecrivez-nous
+                </a>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p><em>Cette politique est conforme au RGPD et aux exigences du Google Play Store.</em></p>
+            <p style="margin-top: 0.5rem;">&copy; 2025 Mon Stock. Tous droits réservés.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Set current date
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('fr-FR', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    </script>
+</body>
+</html>
